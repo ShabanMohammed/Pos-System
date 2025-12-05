@@ -9,7 +9,7 @@ class Category(models.Model):
     """ نموذج فئة المنتج في نظام نقاط البيع """
     name = models.CharField(max_length=100,verbose_name="اسم الفئة")
     description = models.TextField(blank=True, null=True,verbose_name="الوصف")
-    createsd_at = models.DateTimeField(auto_now_add=True,verbose_name="تاريخ الإنشاء")
+    created_at = models.DateTimeField(auto_now_add=True,verbose_name="تاريخ الإنشاء")
     class Meta:
         verbose_name = "فئة"
         verbose_name_plural = "الفئات"
@@ -25,7 +25,7 @@ class Product(models.Model):
     price = models.DecimalField(max_digits=10, decimal_places=2,
                                 verbose_name="سعر البيع")
     cost = models.DecimalField(max_digits=10, decimal_places=2,
-                               verbose_name="سعر البيع")
+                               verbose_name="سعر التكلفة")
     stock = models.IntegerField( default=0,verbose_name="المخزون")
     barcode = models.CharField(max_length=50, unique=True,blank=True,
                                 verbose_name="الباركود")
